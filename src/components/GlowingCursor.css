@@ -1,0 +1,41 @@
+﻿.glowing-cursor-ring, .glowing-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.glowing-cursor-ring[data-visible="true"], .glowing-cursor-dot[data-visible="true"] { opacity: 1; }
+.glowing-cursor-ring span {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: -16px;
+  top: -16px;
+  border: 1px solid #dcc58cb3;
+  border-radius: 50%;
+  background: #d9bd7810;
+  box-shadow: 0 0 15px #d9bd7830, inset 0 0 8px #d9bd7818;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+.glowing-cursor-dot span {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #f3dfb2;
+  box-shadow: 0 0 7px #f3dfb299;
+}
+.glowing-cursor-ring[data-interactive="true"] span { transform: scale(1.35); background: #d9bd781b; box-shadow: 0 0 20px #d9bd7840; }
+@media(hover:hover) and (pointer:fine) {
+  .has-glowing-cursor, .has-glowing-cursor * { cursor: none !important; }
+}
+@media(hover:none), (pointer:coarse) { .glowing-cursor-ring, .glowing-cursor-dot { display: none; } }
+@media(prefers-reduced-motion:reduce) { .glowing-cursor-ring, .glowing-cursor-dot, .glowing-cursor-ring span { transition: none; } }
+@media(forced-colors:active) { .has-glowing-cursor, .has-glowing-cursor * { cursor: auto !important; } .glowing-cursor-ring, .glowing-cursor-dot { display:none; } }

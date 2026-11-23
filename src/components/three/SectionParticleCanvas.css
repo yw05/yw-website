@@ -1,0 +1,10 @@
+﻿/* Large background sculptures, separate from the centered foreground content. */
+.section-with-particles { position: relative; isolation: isolate; }
+.section-foreground { position: relative; z-index: 1; width: 100%; }
+.section-particle-background { position: fixed; z-index: 0; top: 0; right: -4vw; width: min(58vw, 1000px); height: 100dvh; margin: 0; pointer-events: none; user-select: none; opacity: 1; filter: brightness(1.45); mask-image: linear-gradient(to right, transparent, #000 15%); }
+.section-particle-background canvas { display: block; pointer-events: none; }
+.visual-education { width: min(46vw, 800px); right: -2vw; opacity: 1; }
+#education .education-item { max-width: 100%; background: #292c26ed; }
+.section-with-particles .work-item, .section-with-particles .project-item { background: #292c26ed; }
+@media(max-width:1100px) { .section-particle-background { right: -12vw; width: 65vw; opacity: 1; } .visual-education { width: 54vw; } }
+@media(max-width:700px) { .section-particle-background { position: absolute; top: 0; right: -6%; width: 90%; height: 100%; min-height: 420px; opacity: .8; } .visual-education { width: 75%; } }
