@@ -81,7 +81,7 @@
   socials: [
     { label: 'LinkedIn', shortLabel: 'in', href: 'https://www.linkedin.com/in/yeweiw' },
     { label: 'GitHub', shortLabel: 'gh', href: 'https://github.com/yw05' },
-    { label: 'Resume', shortLabel: 'CV', href: '/resume.pdf', download: 'Yewei-Wang-Resume.pdf' },
+    { label: 'Resume', shortLabel: 'CV', href: `${import.meta.env.BASE_URL}resume.pdf`, download: 'Yewei-Wang-Resume.pdf' },
   ],
 }
 
